@@ -26,8 +26,8 @@
 \graphicspath{{images/}{./}{Images/}{figures/}{Figures/}}
 % Define caption style
 \RequirePackage[font={footnotesize}]{caption}
-% Set table captions below the table.
-\AtBeginDocument{\captionsetup[table]{position=bottom}}
+% Captions should be left-aligned when they fit in a single line.
+\captionsetup{justification=justified,singlelinecheck=false}
 % Do not include chapter into figure and table numbering
 \RequirePackage{chngcntr}
 \counterwithout{figure}{chapter}
