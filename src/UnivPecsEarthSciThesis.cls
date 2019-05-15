@@ -89,6 +89,10 @@
 \NewDocumentCommand{\coadvisor}{m}{\def\coadvisorname{#1}}
 \NewDocumentCommand{\location}{m}{\newcommand{\locationname}{#1}}
 \NewDocumentCommand{\univlogo}{m}{\newcommand{\univlogopath}{#1}}
+\NewDocumentCommand\acknowledgements{}{%
+	\chapter*{Acknowledgements}
+	\addcontentsline{toc}{chapter}{Acknowledgements}
+}
 
 % Default values
 \coadvisor{}
