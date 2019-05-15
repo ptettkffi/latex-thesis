@@ -127,6 +127,7 @@
     \tpe{\small \locationname, \@date}{}
     }%
   \cleardoublepage
+  \tableofcontents
 }
 
 % Correctly number and label appendices.
