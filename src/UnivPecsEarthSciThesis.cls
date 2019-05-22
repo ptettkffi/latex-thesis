@@ -19,6 +19,7 @@
 \RequirePackage{siunitx}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{apacite}
+\RequirePackage{natbib}
 \RequirePackage{graphicx}
 \RequirePackage{url}
 \RequirePackage{float}
@@ -93,6 +94,32 @@
 	\chapter*{Acknowledgements}
 	\addcontentsline{toc}{chapter}{Acknowledgements}
 }
+% A new bibliography command for creating APA references with a TOC entry
+\NewDocumentCommand{\upbibliography}{om}{%
+	\bibliographystyle{apacite}
+	\IfValueT{#1}{%
+		\cleardoublepage
+		\phantomsection
+		\addcontentsline{toc}{chapter}{#1}
+	}
+	\bibliography{#2}
+}
+% A new appendix command with correct numbering
+\NewDocumentCommand{\upappendix}{m}{%
+	\appendix
+	\setcounter{figure}{0}
+	\setcounter{table}{0}
+	\setcounter{program}{0}
+	\makeatletter
+	\let\c@table\c@figure
+	\let\ftype@table\ftype@figure
+	\let\c@program\c@figure
+	\let\ftype@program\ftype@figure
+	\makeatother
+	\captionsetup[table]{name=#1}
+	\captionsetup[figure]{name=#1}
+	\captionsetup[program]{name=#1}
+}
 
 % Default values
 \coadvisor{}
@@ -128,24 +155,6 @@
     }%
   \cleardoublepage
   \tableofcontents
-}
-
-% Correctly number and label appendices.
-\let\oldappendix\appendix
-\RenewDocumentCommand{\appendix}{}{%
-	\oldappendix
-	\setcounter{figure}{0}
-	\setcounter{table}{0}
-	\setcounter{program}{0}
-	\makeatletter
-	\let\c@table\c@figure
-	\let\ftype@table\ftype@figure
-	\let\c@program\c@figure
-	\let\ftype@program\ftype@figure
-	\makeatother
-	\captionsetup[table]{name=Appendix}
-	\captionsetup[figure]{name=Appendix}
-	\captionsetup[program]{name=Appendix}
 }
 
 % Define header styles
