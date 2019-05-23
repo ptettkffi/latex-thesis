@@ -163,4 +163,10 @@
 \titleformat{\section}{\large}{}{0mm}{\noindent\thesection.\quad#1}
 \titleformat{\subsection}{\large}{}{0mm}{\noindent\thesubsection.\quad#1}
 \renewcommand{\contentsname}{Table of Contents}
-  
+
+% Since natbib is loaded, citep and citet should be used instead of cite
+\AtBeginDocument{%
+	\RenewDocumentCommand{\cite}{m}{%
+		\PackageError{UnivPecsEarthSciThesis}{For inline citations, please use commands \citep and \citet.}{}
+	}
+}
