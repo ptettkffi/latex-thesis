@@ -66,7 +66,7 @@
 
 % Pseudocode language definition
 \lstdefinelanguage{pseudo}{
-  keywords={Require, require, If, if, Then, then, Else, else, End, end, While, while, Do, do},
+  keywords={Require, require, If, if, Then, then, Else, else, End, end, While, while, Do, do, Case, case, Of, of, In, in, Until, until, For, for, Next, next, Set, set, Read, read, Get, get, Print, print, Display, display, Increment, increment, Decrement, decrement, Push, push, Pop, pop, Determine, determine, Compute, compute, Return, return, Call, call, Raise, raise, Throw, throw, Exception, exception, Procedure, procedure},
   morecomment=[l]{//},
   morecomment=[s]{/*}{*/},
   morestring=[b]',
