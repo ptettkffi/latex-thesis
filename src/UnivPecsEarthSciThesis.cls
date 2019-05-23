@@ -14,9 +14,11 @@
 % Required packages
 \RequirePackage{multirow}
 \RequirePackage{listings}
+\RequirePackage{lmodern}
 \RequirePackage{etoolbox}
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{siunitx}
+\RequirePackage{amsmath}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{apacite}
 \RequirePackage{natbib}
@@ -62,6 +64,20 @@
   sensitive=true
 }
 
+% Pseudocode language definition
+\lstdefinelanguage{pseudo}{
+  keywords={Require, require, If, if, Then, then, Else, else, End, end, While, while, Do, do},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+
 \lstset{aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
@@ -79,7 +95,8 @@
   literate={/}{{/\allowbreak}}{1},
   floatplacement=tbp,
   belowcaptionskip=0pt,
-  belowskip=0pt
+  belowskip=0pt,
+  mathescape
 }
 
 % Geometry settings
