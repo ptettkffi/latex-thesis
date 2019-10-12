@@ -1,7 +1,7 @@
 % UnivPecsEarthSciThesis.cls
 % 2019-04-02 Gábor Farkas gfarkas (at) gamma.ttk.pte.hu
 % Identification
-\ProvidesClass{UnivPecsEarthSciThesis}[2019/04/02 version 1.00 University of Pécs Doctoral School of Earth Sciences thesis]
+\ProvidesClass{UnivPecsEarthSciThesis}[2019/04/02 version 1.00 University of Pecs Doctoral School of Earth Sciences thesis]
 \NeedsTeXFormat{LaTeX2e}
 
 % Options
@@ -18,6 +18,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{siunitx}
+\RequirePackage{textcomp}
 \RequirePackage{amsmath}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{apacite}
@@ -25,12 +26,14 @@
 \RequirePackage{graphicx}
 \RequirePackage{url}
 \RequirePackage{float}
+\RequirePackage{subfig}
 % Specifies where to look for included images
 \graphicspath{{images/}{./}{Images/}{figures/}{Figures/}}
 % Define caption style
 \RequirePackage[font={footnotesize}]{caption}
 % Captions should be left-aligned when they fit in a single line.
 \captionsetup{justification=justified,singlelinecheck=false}
+\captionsetup[subfloat]{justification=centering}
 % Do not include chapter into figure and table numbering
 \RequirePackage{chngcntr}
 \counterwithout{figure}{chapter}
